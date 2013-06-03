@@ -1,0 +1,51 @@
+# Compiled source #
+###################
+*.com
+*.class
+#.exe
+*.o
+*.so
+*.pdb
+*.suo
+*.obj
+*/bin/*
+*/obj/*
+bin/*
+obj/*
+deploy/*
+*/.DS_Store
+.DS_Store
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Visual Studio shit Motherfucka #
+##################################
+*.suo
+*.sdf
+*.opensdf
+*.cache
+*.pdb
+*.csproj.user
+*/_ReSharper*/*
+*.user
+
+#Template Bat file#
+###################
+postbuild.bat
+/TestResults
+
+# JetBrains Crap #
+##################
+*.dotCover
+_ReSharper.*
