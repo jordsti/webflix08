@@ -11,13 +11,10 @@ public class Film {
 	private String poster;
 	private int duree;
 	private ArrayList<Role> roles;
-	private ArrayList<Pays> payss;
+	private ArrayList<Pays> pays;
 	private ArrayList<Genre> genres;
-	private int inventaire;
 	private ArrayList<Scenariste> scenaristes;
-	private ArrayList<Annonce> annoce;
+	private ArrayList<Annonce> annonces;
 	private Langue langue;
 	private Personne realisateur;
-	
-
 }

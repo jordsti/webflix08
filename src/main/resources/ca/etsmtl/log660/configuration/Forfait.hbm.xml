@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Forfait" table="FORFAITS">				
+		<id name="id" column="NO_FORFAIT_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="nom" column="NOM" not-null="true" />
+		<property name="cout" column="COUT" not-null="true" />
+		<property name="locationMax" column="LOCATION_MAX" not-null="true" />
+		<property name="duree" column="DUREE" not-null="true" />
+￼	</class>
+</hibernate-mapping>

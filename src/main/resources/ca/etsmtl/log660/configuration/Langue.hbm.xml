@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Langue" table="LANGUES">				
+		<id name="id" column="NO_LANGUE_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="langue" column="LANGUE" not-null="true" />
+￼	</class>
+</hibernate-mapping>
