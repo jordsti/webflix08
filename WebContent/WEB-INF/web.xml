@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	<servlet>
-		<display-name>TestServlet</display-name>
-		<servlet-name>TestServlet</servlet-name>
-		<servlet-class>ca.etsmtl.log660.servlets.TestServlet</servlet-class>
+		<display-name>UserLogin</display-name>
+		<servlet-name>UserLogin</servlet-name>
+		<servlet-class>ca.etsmtl.log660.servlets.UserLogin</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet>
+		<display-name>FilmResearch</display-name>
+		<servlet-name>FilmResearch</servlet-name>
+		<servlet-class>ca.etsmtl.log660.servlets.FilmResearch</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<display-name>Location</display-name>
+		<servlet-name>Location</servlet-name>
+		<servlet-class>ca.etsmtl.log660.servlets.Location</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
 	<servlet-mapping>
-		<servlet-name>TestServlet</servlet-name>
-		<url-pattern>/pagetest</url-pattern>
+		<servlet-name>UserLogin</servlet-name>
+		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FilmResearch</servlet-name>
+		<url-pattern>/Film</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Location</servlet-name>
+		<url-pattern>/Location</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
