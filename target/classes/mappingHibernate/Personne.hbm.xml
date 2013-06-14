@@ -12,5 +12,5 @@
 		<property name="lieuNaissance" column="LIEU_NAISSANCE" />
 		<property name="biographie" column="BIOGRAPHIE" not-null="true" />
 		<property name="photo" column="PHOTO" />
-￼	</class>
+	</class>
 </hibernate-mapping>

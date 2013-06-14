@@ -2,12 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<subclass name="Client" extends="Intervenant" discriminator-value="CLIENTS">				
-		<join table="CLIENTS">
+	<subclass name="Employe" extends="Intervenant" discriminator-value="EMPLOYES">				
+		<join table="EMPLOYES">
 			<key column="NO_INTERVENANT_FK" />
 			
-			<many-to-one name="forfait" column="NO_FORFAIT_FK" />
-			<many-to-one name="infoCredit" column="NO_INFO_CREDIT_FK" />
+			<property name="matricule" column="MATRICULE" not-null="true" />
 		</join>
-￼	</subclass>
+	</subclass>
 </hibernate-mapping>

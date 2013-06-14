@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="Annonce" table="ANNONCES">				
-		<id name="id">
+	<class name="Langue" table="LANGUES">				
+		<id name="id" column="NO_LANGUE_PK">
 			<generator class="native" />
 		</id>
 		
-		<property name="url" column="URL" not-null="true" />
-￼	</class>
+		<property name="langue" column="LANGUE" not-null="true" />
+	</class>
 </hibernate-mapping>

@@ -11,5 +11,5 @@
 		
 		<many-to-one name="film" column="NO_FILM_FK" />
 		<many-to-one name="client" column="NO_INTERVENANT_FK" />
-￼	</class>
+	</class>
 </hibernate-mapping>

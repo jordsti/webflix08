@@ -36,5 +36,5 @@
 		
 		<many-to-one name="langue" column="NO_LANGUE_FK" />
 		<many-to-one name="realisateur" column="NO_REALISATEUR_FK" />
-￼	</class>
+	</class>
 </hibernate-mapping>

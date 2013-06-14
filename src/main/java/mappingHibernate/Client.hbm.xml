@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<subclass name="Client" extends="Intervenant" discriminator-value="CLIENTS">				
+		<join table="CLIENTS">
+			<key column="NO_INTERVENANT_FK" />
+			
+			<many-to-one name="forfait" column="NO_FORFAIT_FK" />
+			<many-to-one name="infoCredit" column="NO_INFO_CREDIT_FK" />
+		</join>
+	</subclass>
+</hibernate-mapping>

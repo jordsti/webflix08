@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="Scenariste" table="SCENARISTES">				
-		<id name="id" column="NO_SCENARISTE_PK">
+	<class name="Genre" table="GENRES">				
+		<id name="id" column="NO_GENRE_PK">
 			<generator class="native" />
 		</id>
 		
-		<property name="nom" column="NOM" not-null="true" />
-￼	</class>
+		<property name="genre" column="GENRE" not-null="true" />
+	</class>
 </hibernate-mapping>

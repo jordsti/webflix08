@@ -15,5 +15,5 @@
 		<property name="mdp" column="MOT_DE_PASSE" not-null="true" />
 		
 		<many-to-one name="adresse" column="NO_ADRESSE_FK" />
-￼	</class>
+	</class>
 </hibernate-mapping>

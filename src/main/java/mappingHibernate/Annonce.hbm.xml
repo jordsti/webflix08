@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="Role" table="ROLES">				
+	<class name="ca.etsmtl.log660.entity.Annonce" table="ANNONCES">				
 		<id name="id">
 			<generator class="native" />
 		</id>
 		
-		<property name="nomRole" column="NOM_ROLE" not-null="true" />
-￼	</class>
+		<property name="url" column="URL" not-null="true" />
+	</class>
 </hibernate-mapping>

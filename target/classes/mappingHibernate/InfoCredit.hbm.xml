@@ -12,5 +12,5 @@
 		<property name="expAnnee" column="EXP_ANNEE" not-null="true" />
 		<property name="cvv" column="CVV" not-null="true" />
 		<property name="carte" column="CARTE" not-null="true" />
-￼	</class>
+	</class>
 </hibernate-mapping>

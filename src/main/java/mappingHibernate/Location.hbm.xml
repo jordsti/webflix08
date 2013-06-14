@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Location" table="LOCATIONS">				
+		<id name="id" column="NO_LOCATION_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="debut" column="DEBUT" not-null="true" />
+		
+		<many-to-one name="film" column="NO_FILM_FK" />
+		<many-to-one name="client" column="NO_INTERVENANT_FK" />
+	</class>
+</hibernate-mapping>

@@ -1,17 +1,22 @@
 <?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="Adresse" table="ADRESSES">				
+	<class name="ca.etsmtl.log660.entity.Adresse" table="ADRESSES">
 		<id name="id" column="NO_ADRESSE_PK">
 			<generator class="native" />
 		</id>
-		
+
 		<property name="rue" column="RUE" not-null="true" />
 		<property name="nocivique" column="NO_CIVIQUE" not-null="true" />
 		<property name="app" column="APP" />
 		<property name="ville" column="VILLE" not-null="true" />
 		<property name="province" column="PROVINCE" not-null="true" />
 		<property name="codePostal" column="CODE_POSTAL" not-null="true" />
-￼	</class>
+
+		<!-- <set name =""></set> -->
+		
+	</class>
 </hibernate-mapping>

@@ -19,6 +19,15 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
+	<servlet>
+	<servlet-name>myjsp</servlet-name>
+	<jsp-file>/myjsp.jsp</jsp-file>
+	<init-param>
+	<param-name>hello</param-name>
+	<param-value>test</param-value>
+	</init-param>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>UserLogin</servlet-name>
 		<url-pattern>/Login</url-pattern>

@@ -1,6 +1,8 @@
 package ca.etsmtl.log660.entity;
 
-public class Adresse {
+import java.io.Serializable;
+
+public class Adresse  implements Serializable {
 	private String rue;
 	private String nocivique;
 	private String app;

@@ -11,5 +11,5 @@
 		<property name="cout" column="COUT" not-null="true" />
 		<property name="locationMax" column="LOCATION_MAX" not-null="true" />
 		<property name="duree" column="DUREE" not-null="true" />
-￼	</class>
+	</class>
 </hibernate-mapping>

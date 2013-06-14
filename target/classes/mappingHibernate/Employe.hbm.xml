@@ -8,5 +8,5 @@
 			
 			<property name="matricule" column="MATRICULE" not-null="true" />
 		</join>
-￼	</subclass>
+	</subclass>
 </hibernate-mapping>
