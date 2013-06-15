@@ -1,12 +1,19 @@
 package ca.etsmtl.log660.entity;
 
 public class InfoCredit {
+	private int id;
 	private String numeroCarte;
 	private String carte;
 	private int expMois;
 	private int expAnnee;
 	private int cvv;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNumeroCarte() {
 		return numeroCarte;
 	}

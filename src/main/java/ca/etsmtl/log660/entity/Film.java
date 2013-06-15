@@ -5,6 +5,7 @@ import ca.etsmtl.log660.entity.Role;
 
 
 public class Film {
+	private int id;
 	private String titre;
 	private int annee;
 	private String resume;
@@ -18,7 +19,12 @@ public class Film {
 	private Langue langue;
 	private Personne realisateur;
 	
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getTitre() {
 		return titre;
 	}

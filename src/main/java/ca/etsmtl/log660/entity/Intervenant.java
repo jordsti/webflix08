@@ -3,6 +3,7 @@ package ca.etsmtl.log660.entity;
 import java.util.Date;
 
 public class Intervenant {
+	private int id;
 	private String nom;
 	private String prenom;
 	private String courriel;
@@ -11,6 +12,12 @@ public class Intervenant {
 	private Adresse adresse;
 	private Date naissance;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNom() {
 		return nom;
 	}

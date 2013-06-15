@@ -1,11 +1,19 @@
 package ca.etsmtl.log660.entity;
 
 public class Forfait {
+	private int id;
 	private String nom;
 	private float cout;
 	private int locationMax;
 	private int duree;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNom() {
 		return nom;
 	}
