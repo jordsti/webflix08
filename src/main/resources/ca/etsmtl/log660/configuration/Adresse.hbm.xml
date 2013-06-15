@@ -3,8 +3,8 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-	<class name="ca.etsmtl.log660.entity.Adresse" table="ADRESSES">
+<hibernate-mapping package="ca.etsmtl.log660.entity">
+	<class name="Adresse" table="ADRESSES">
 		<id name="id" column="NO_ADRESSE_PK">
 			<generator class="native" />
 		</id>
