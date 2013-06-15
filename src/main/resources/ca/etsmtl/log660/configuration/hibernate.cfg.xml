@@ -5,8 +5,8 @@
  	<session-factory name="Hibernate">
   		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
   		<property name="hibernate.connection.password">4WWFU3kB</property>
-  		<property name="hibernate.connection.url">jdbc:oracle:thin:@dijkstra.logti.etsmtl.ca:1521:LOG660</property>
-  		<property name="hibernate.connection.username">equipe08</property>
+  		<property name="hibernate.connection.url">jdbc:oracle:thin:@dijkstra.logti.etsmtl.ca:1521/log660</property>
+  		<property name="hibernate.connection.username">equipe8</property>
   		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
   		<property name="hibernate.default_schema">EQUIPE08</property>
   		<property name="hibernate.transaction.auto_close_session">false</property>
