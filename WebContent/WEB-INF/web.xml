@@ -30,12 +30,12 @@
 	
 	<servlet-mapping>
 		<servlet-name>UserLogin</servlet-name>
-		<url-pattern>/Login</url-pattern>
+		<url-pattern>/UserLogin</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>FilmResearch</servlet-name>
-		<url-pattern>/Film</url-pattern>
+		<url-pattern>/FileResearch</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
