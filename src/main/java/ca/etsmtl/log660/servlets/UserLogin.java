@@ -8,11 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 /**
  * Servlet implementation class TestServlet
  */
 public class UserLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String redirectURL = "/lab02/index.jsp";
 
 	/**
 	 * Default constructor.
@@ -35,7 +40,8 @@ public class UserLogin extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		Configuration cfg = new Configuration();
+		cfg.configure();
 	}
 
 }
