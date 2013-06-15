@@ -1,6 +1,7 @@
 package ca.etsmtl.log660.entity;
 
 public class Role extends Personne {
+	private int id;
 	private String nomRole;
 
 	public String getNomRole() {
@@ -9,5 +10,13 @@ public class Role extends Personne {
 
 	public void setNomRole(String nomRole) {
 		this.nomRole = nomRole;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

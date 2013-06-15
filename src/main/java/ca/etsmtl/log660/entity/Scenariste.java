@@ -1,6 +1,7 @@
 package ca.etsmtl.log660.entity;
 
 public class Scenariste {
+	private int id;
 	private String nom;
 
 	public String getNom() {
@@ -9,5 +10,13 @@ public class Scenariste {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

@@ -3,6 +3,7 @@ package ca.etsmtl.log660.entity;
 import java.util.Date;
 
 public class Location {
+	private int id;
 	private Film film;
 	private Client client;
 	private Date debut;
@@ -24,5 +25,13 @@ public class Location {
 	}
 	public void setDebut(Date debut) {
 		this.debut = debut;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

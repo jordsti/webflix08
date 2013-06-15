@@ -3,6 +3,7 @@ package ca.etsmtl.log660.entity;
 import java.util.Date;
 
 public class Personne {
+	private int id;
 	private String nom;
 	private Date naissance;
 	private String lieuNaissance;
@@ -39,5 +40,12 @@ public class Personne {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
+	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 }
