@@ -1,5 +1,7 @@
 package ca.etsmtl.log660.entity;
 
+
+
 public class Client extends Intervenant {	
 	
 	private int id;

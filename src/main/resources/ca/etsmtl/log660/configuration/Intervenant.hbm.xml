@@ -15,5 +15,18 @@
 		<property name="mdp" column="MOT_DE_PASSE" not-null="true" />
 		
 		<many-to-one name="adresse" column="NO_ADRESSE_FK" />
+		
+		
+		<joined-subclass name="Employe" table="Employe">				
+				<key column="NO_INTERVENANT_FK" />				
+				<property name="matricule" column="MATRICULE" not-null="true" />
+		</joined-subclass>
+		
+		<joined-subclass name="Client" table="Client">	
+				<key column="NO_INTERVENANT_FK" />				
+				<many-to-one name="forfait" column="NO_FORFAIT_FK" />
+				<many-to-one name="infoCredit" column="NO_INFO_CREDIT_FK" />
+		</joined-subclass>
+		
 	</class>
 </hibernate-mapping>

@@ -13,8 +13,8 @@
   		
   		<mapping resource="ca/etsmtl/log660/configuration/Adresse.hbm.xml"/>  		
   		<mapping resource="ca/etsmtl/log660/configuration/Annonce.hbm.xml"/> 
-  		<mapping resource="ca/etsmtl/log660/configuration/Client.hbm.xml"/> 
-  		<mapping resource="ca/etsmtl/log660/configuration/Employe.hbm.xml"/> 
+  		<!-- <mapping resource="ca/etsmtl/log660/configuration/Client.hbm.xml"/>   -->
+  		<!-- <mapping resource="ca/etsmtl/log660/configuration/Employe.hbm.xml"/>  --> 
   		<mapping resource="ca/etsmtl/log660/configuration/Film.hbm.xml"/> 
   		<mapping resource="ca/etsmtl/log660/configuration/Forfait.hbm.xml"/> 
   		<mapping resource="ca/etsmtl/log660/configuration/Genre.hbm.xml"/> 
