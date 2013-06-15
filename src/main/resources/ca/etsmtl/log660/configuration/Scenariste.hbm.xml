@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
+<hibernate-mapping package="ca.etsmtl.log660.entity">
 	<class name="Scenariste" table="SCENARISTES">				
 		<id name="id" column="NO_SCENARISTE_PK">
 			<generator class="native" />
