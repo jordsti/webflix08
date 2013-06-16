@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ca.etsmtl.log660.entity">
+	<class name="InfoCredit" table="INFO_CREDITS">				
+		<id name="id" column="NO_INFO_CREDIT_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="numeroCarte" column="NUMERO_CARTE" not-null="true" />
+		<property name="expMois" column="EXP_MOIS" not-null="true" />
+		<property name="expAnnee" column="EXP_ANNEE" not-null="true" />
+		<property name="cvv" column="CVV" not-null="true" />
+		<property name="carte" column="CARTE" not-null="true" />
+	</class>
+</hibernate-mapping>

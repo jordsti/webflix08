@@ -59,7 +59,7 @@ public class UserLogin extends HttpServlet {
 				
 		if(intervenant == null){
 			response.sendRedirect("/lab02/index.jsp?erreurMSG=true");
-			
+
 		}else{
 			request.getSession().setAttribute("id", intervenant.getId());
 			request.getSession().setAttribute("courriel", intervenant.getCourriel());

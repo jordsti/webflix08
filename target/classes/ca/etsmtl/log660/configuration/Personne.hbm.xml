@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ca.etsmtl.log660.entity">
+	<class name="Personne" table="PERSONNES">				
+		<id name="id" column="NO_PERSONNE_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="nom" column="NOM" not-null="true" />
+		<property name="naissance" column="DATE_NAISSANCE" />
+		<property name="lieuNaissance" column="LIEU_NAISSANCE" />
+		<property name="biographie" column="BIOGRAPHIE" not-null="true" />
+		<property name="photo" column="PHOTO" />
+	</class>
+</hibernate-mapping>
