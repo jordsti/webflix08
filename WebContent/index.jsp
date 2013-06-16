@@ -7,16 +7,19 @@
 <title>Webflix 08</title>
 </head>
 <body>
+	<% if(request.getParameter("erreurMSG") != null){ %>
+		<h2>Courriel ou mot de passe invalide</h2>
+	<% } %>
 	<h3>Connexion client</h3>
 	<div>
-		<form name="login" action="UserLogin" method="post">
+		<form name="authentification" action="UserLogin" method="post">
 			
 			<label>Courriel :</label>
-			<input type="text" name="email" />
+			<input type="text" name="courriel" />
 			<br />
 			
 			<label>Mot de passe : </label>
-			<input type="password" name="password" />
+			<input type="password" name="mdp" />
 			<br />
 			
 			<input type="submit" name="connexion" value="Connexion" />

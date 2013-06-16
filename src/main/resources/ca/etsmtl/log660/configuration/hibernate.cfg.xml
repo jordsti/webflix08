@@ -2,19 +2,19 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- 	<session-factory name="Hibernate">
+ 	<session-factory>
   		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
   		<property name="hibernate.connection.password">4WWFU3kB</property>
-  		<property name="hibernate.connection.url">jdbc:oracle:thin:@dijkstra.logti.etsmtl.ca:1521/log660</property>
+  		<property name="hibernate.connection.url">jdbc:oracle:thin:@dijkstra.logti.etsmtl.ca:1521:log660</property>
   		<property name="hibernate.connection.username">equipe8</property>
   		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-  		<property name="hibernate.default_schema">EQUIPE08</property>
+  		<property name="hibernate.default_schema">EQUIPE8</property>
   		<property name="hibernate.transaction.auto_close_session">false</property>
+  		<property name="current_session_context_class">thread</property>
   		
-  		<mapping resource="ca/etsmtl/log660/configuration/Adresse.hbm.xml"/>  		
+  		<mapping resource="ca/etsmtl/log660/configuration/mapping.hbm.xml"/>
+  		<!-- <mapping resource="ca/etsmtl/log660/configuration/Adresse.hbm.xml"/>  		
   		<mapping resource="ca/etsmtl/log660/configuration/Annonce.hbm.xml"/> 
-  		<!-- <mapping resource="ca/etsmtl/log660/configuration/Client.hbm.xml"/> 
-  		<mapping resource="ca/etsmtl/log660/configuration/Employe.hbm.xml"/> --> 
   		<mapping resource="ca/etsmtl/log660/configuration/Film.hbm.xml"/> 
   		<mapping resource="ca/etsmtl/log660/configuration/Forfait.hbm.xml"/> 
   		<mapping resource="ca/etsmtl/log660/configuration/Genre.hbm.xml"/> 
@@ -25,7 +25,7 @@
   		<mapping resource="ca/etsmtl/log660/configuration/Pays.hbm.xml"/> 
   		<mapping resource="ca/etsmtl/log660/configuration/Personne.hbm.xml"/> 
   		<mapping resource="ca/etsmtl/log660/configuration/Role.hbm.xml"/> 
-  		<mapping resource="ca/etsmtl/log660/configuration/Scenariste.hbm.xml"/> 
+  		<mapping resource="ca/etsmtl/log660/configuration/Scenariste.hbm.xml"/> -->
   		
  	</session-factory>
  	

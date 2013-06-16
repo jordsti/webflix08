@@ -13,8 +13,7 @@ public class SessionFactoryHelper {
 	static {
 		try {
 			URL hibernateConfig = SessionFactoryHelper.class.getResource("hibernate.cfg.xml");
-			sessionFactory = new Configuration().configure(hibernateConfig)
-					.buildSessionFactory();
+			sessionFactory = new Configuration().configure(hibernateConfig).buildSessionFactory();
 		} catch (Throwable e) {
 			System.err.println("Could not create the session factory.");
 			throw new ExceptionInInitializerError(e);

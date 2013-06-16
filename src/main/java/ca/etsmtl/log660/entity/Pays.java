@@ -4,6 +4,14 @@ public class Pays {
 	private int id;
 	private String nomPays;
 
+	public Pays(){
+	}
+	
+	public Pays(int id, String nomPays){
+		this.id = id;
+		this.nomPays = nomPays;
+	}
+	
 	public String getNomPays() {
 		return nomPays;
 	}
