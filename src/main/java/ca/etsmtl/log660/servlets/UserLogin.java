@@ -14,6 +14,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import ca.etsmtl.log660.configuration.SessionFactoryHelper;
+import ca.etsmtl.log660.entity.Client;
 import ca.etsmtl.log660.entity.Intervenant;
 
 /**
@@ -56,8 +57,8 @@ public class UserLogin extends HttpServlet {
 		requete.setParameter("mdp", mdp);
 		
 		Intervenant intervenant = (Intervenant) requete.uniqueResult();
-				
-		if(intervenant == null){
+
+		if(intervenant == null || !(intervenant instanceof Client)){
 			response.sendRedirect("/lab02/index.jsp?erreurMSG=true");
 
 		}else{

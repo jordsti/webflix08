@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ca.etsmtl.log660.entity">
+	<class name="Adresse" table="ADRESSES">
+		<id name="id" column="NO_ADRESSE_PK">
+			<generator class="native" />
+		</id>
+
+		<property name="rue" column="RUE" not-null="true" />
+		<property name="nocivique" column="NO_CIVIQUE" not-null="true" />
+		<property name="app" column="APP" />
+		<property name="ville" column="VILLE" not-null="true" />
+		<property name="province" column="PROVINCE" not-null="true" />
+		<property name="codePostal" column="CODE_POSTAL" not-null="true" />		
+	</class>
+	
+	
+	<class name="Annonce" table="ANNONCES">				
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<property name="url" column="URL" not-null="true" />
+	</class>
+	
+	
+	<class name="Film" table="FILMS">				
+		<id name="id" column="NO_FILM_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="titre" column="TITRE" not-null="true" />
+		<property name="annee" column="ANNEE" not-null="true" />
+		<property name="resume" column="RESUME" not-null="true" />
+		<property name="poster" column="POSTER" />
+		<property name="duree" column="DUREE" not-null="true" />
+		
+		<set name="roles">
+			<key column="NO_FILM_FK" />
+      		<one-to-many class="Role" />
+		</set>
+		<set name="pays">
+			<key column="NO_FILM_FK" />
+      		<many-to-many column="NO_PAYS_FK" class="Pays" />
+		</set>
+		<set name="genres">
+			<key column="NO_FILM_FK" />
+      		<many-to-many column="NO_GENRE_FK" class="Genre" />
+		</set>
+		<set name="scenaristes">
+			<key column="NO_FILM_FK" />
+      		<many-to-many column="NO_SCENARISTE_FK" class="Scenariste" />
+		</set>
+		<set name="annonces">
+			<key column="NO_FILM_FK" />
+      		<many-to-many column="NO_ANNONCE_FK" class="Annonce" />
+		</set>
+		
+		<many-to-one name="langue" column="NO_LANGUE_FK" />
+		<many-to-one name="realisateur" column="NO_REALISATEUR_FK" />
+	</class>
+	
+	
+	<class name="Forfait" table="FORFAITS">				
+		<id name="id" column="NO_FORFAIT_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="nom" column="NOM" not-null="true" />
+		<property name="cout" column="COUT" not-null="true" />
+		<property name="locationMax" column="LOCATION_MAX" not-null="true" />
+		<property name="duree" column="DUREE" not-null="true" />
+	</class>
+	
+	
+	<class name="Genre" table="GENRES">				
+		<id name="id" column="NO_GENRE_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="genre" column="GENRE" not-null="true" />
+	</class>
+	
+	
+	<class name="InfoCredit" table="INFO_CREDITS">				
+		<id name="id" column="NO_INFO_CREDIT_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="numeroCarte" column="NUMERO_CARTE" not-null="true" />
+		<property name="expMois" column="EXP_MOIS" not-null="true" />
+		<property name="expAnnee" column="EXP_ANNEE" not-null="true" />
+		<property name="cvv" column="CVV" not-null="true" />
+		<property name="carte" column="CARTE" not-null="true" />
+	</class>
+	
+	
+	<class name="Intervenant" table="INTERVENANTS">				
+		<id name="id" column="NO_INTERVENANT_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="nom" column="NOM" not-null="true" />
+		<property name="prenom" column="PRENOM" not-null="true" />
+		<property name="courriel" column="COURRIEL" not-null="true" />
+		<property name="naissance" column="DATE_NAISSANCE" not-null="true" />
+		<property name="telephone" column="TELEPHONE" not-null="true" />
+		<property name="mdp" column="MOT_DE_PASSE" not-null="true" />
+		
+		<many-to-one name="adresse" column="NO_ADRESSE_FK" />
+		
+		<joined-subclass name="Client" extends="Intervenant" table="CLIENTS">				
+			<key column="NO_INTERVENANT_FK" />
+				
+			<many-to-one name="forfait" column="NO_FORFAIT_FK" />
+			<many-to-one name="infoCredit" column="NO_INFO_CREDIT_FK" />
+		</joined-subclass>
+		<joined-subclass name="Employe" extends="Intervenant" table="EMPLOYES">				
+			<key column="NO_INTERVENANT_FK" />
+				
+			<property name="matricule" column="MATRICULE" not-null="true" />
+		</joined-subclass>
+	</class>
+	
+	
+	<class name="Langue" table="LANGUES">				
+		<id name="id" column="NO_LANGUE_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="langue" column="LANGUE" not-null="true" />
+	</class>
+	
+	
+	<class name="Location" table="LOCATIONS">				
+		<id name="id" column="NO_LOCATION_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="debut" column="DEBUT" not-null="true" />
+		
+		<many-to-one name="film" column="NO_FILM_FK" />
+		<many-to-one name="client" column="NO_INTERVENANT_FK" />
+	</class>
+	
+	
+	<class name="Pays" table="PAYS">
+        <id name="id" type="integer" column="NO_PAYS_PK">
+            <generator class="native" />
+        </id>
+        <property name="nomPays" type="string" column="PAYS" length="16" not-null="true" />
+    </class>
+    
+    
+    <class name="Personne" table="PERSONNES">				
+		<id name="id" column="NO_PERSONNE_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="nom" column="NOM" not-null="true" />
+		<property name="naissance" column="DATE_NAISSANCE" />
+		<property name="lieuNaissance" column="LIEU_NAISSANCE" />
+		<property name="biographie" column="BIOGRAPHIE" not-null="true" />
+		<property name="photo" column="PHOTO" />
+	</class>
+	
+	
+	<class name="Role" table="ROLES">				
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<property name="nomRole" column="NOM_ROLE" not-null="true" />
+	</class>
+	
+	
+	<class name="Scenariste" table="SCENARISTES">				
+		<id name="id" column="NO_SCENARISTE_PK">
+			<generator class="native" />
+		</id>
+		
+		<property name="nom" column="NOM" not-null="true" />
+	</class>
+</hibernate-mapping>
