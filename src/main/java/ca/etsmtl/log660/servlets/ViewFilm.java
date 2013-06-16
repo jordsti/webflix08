@@ -63,7 +63,11 @@ public class ViewFilm extends HttpServlet {
 			
 			request.setAttribute("film", f);
 			
-			session.close();
+			f.getRoles();
+			f.getScenaristes();
+			f.getGenres();
+
+			//session.close();
 		}
 	}
 

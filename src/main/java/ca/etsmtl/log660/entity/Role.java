@@ -1,9 +1,31 @@
 package ca.etsmtl.log660.entity;
 
-public class Role extends Personne {
-	private int id;
+public class Role {
+	private int personneId;
+	private int filmId;
 	private String nomRole;
+	private Personne personne;
 
+	public int getPersonneId()
+	{
+		return personneId;
+	}
+	
+	public void setPersonneId(int personneId)
+	{
+		this.personneId = personneId;
+	}
+	
+	public Personne getPersonne()
+	{
+		return personne;
+	}
+	
+	public void setPersonne(Personne p)
+	{
+		personne = p;
+	}
+	
 	public String getNomRole() {
 		return nomRole;
 	}
@@ -12,11 +34,12 @@ public class Role extends Personne {
 		this.nomRole = nomRole;
 	}
 	
-	public int getId() {
-		return id;
+	public int getFilmId() {
+		return filmId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setFilmId(int filmId) {
+		this.filmId = filmId;
 	}
+	
 }

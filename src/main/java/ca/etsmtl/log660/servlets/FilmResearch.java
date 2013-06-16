@@ -17,6 +17,7 @@ import ca.etsmtl.log660.entity.Genre;
 import ca.etsmtl.log660.entity.Langue;
 import ca.etsmtl.log660.entity.Pays;
 import ca.etsmtl.log660.entity.Personne;
+import ca.etsmtl.log660.entity.Role;
 import ca.etsmtl.log660.entity.Scenariste;
 
 /**

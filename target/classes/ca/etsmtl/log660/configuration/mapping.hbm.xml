@@ -19,7 +19,7 @@
 	
 	
 	<class name="Annonce" table="ANNONCES">				
-		<id name="id">
+		<id name="id" column="NO_FILM_FK">
 			<generator class="native" />
 		</id>
 		
@@ -40,13 +40,13 @@
 		
 		<set name="roles">
 			<key column="NO_FILM_FK" />
-      		<one-to-many class="Role" />
+      		<many-to-many class="Role" column="NO_PERSONNE_FK" />
 		</set>
-		<set name="pays">
+		<set name="pays" table="PAYS_FILMS">
 			<key column="NO_FILM_FK" />
       		<many-to-many column="NO_PAYS_FK" class="Pays" />
 		</set>
-		<set name="genres">
+		<set name="genres" table="GENRE_FILMS">
 			<key column="NO_FILM_FK" />
       		<many-to-many column="NO_GENRE_FK" class="Genre" />
 		</set>
@@ -56,7 +56,7 @@
 		</set>
 		<set name="annonces">
 			<key column="NO_FILM_FK" />
-      		<many-to-many column="NO_ANNONCE_FK" class="Annonce" />
+      		<one-to-many class="Annonce" />
 		</set>
 		
 		<many-to-one name="langue" column="NO_LANGUE_FK" />
@@ -168,12 +168,13 @@
 	</class>
 	
 	
-	<class name="Role" table="ROLES">				
-		<id name="id">
+	<class name="Role" table="ROLES" >			
+		<id name="personneId" type="integer" column="NO_PERSONNE_FK">
 			<generator class="native" />
 		</id>
-		
 		<property name="nomRole" column="NOM_ROLE" not-null="true" />
+		<property name="filmId" column="NO_FILM_FK" not-null="true" />
+		<many-to-one name="personne" column = "NO_PERSONNE_FK" insert="false" update="false"/>
 	</class>
 	
 	
