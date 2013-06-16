@@ -2,7 +2,7 @@ package ca.etsmtl.log660.entity;
 
 public class Langue {
 	private int id;
-	private String Langue;
+	private String langue;
 
 	public int getId() {
 		return id;
@@ -11,10 +11,10 @@ public class Langue {
 		this.id = id;
 	}
 	public String getLangue() {
-		return Langue;
+		return langue;
 	}
 
 	public void setLangue(String langue) {
-		Langue = langue;
+		this.langue = langue;
 	}
 }

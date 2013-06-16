@@ -47,6 +47,10 @@
 			<input type="text" name="genre" />
 			<br />
 			
+			<label>Sc&eacute;nariste : </label>
+			<input type="text" name="scenariste" />
+			<br />
+			
 			<label>R&eacute;alisateur : </label>
 			<input type="text" name="realisateur" />
 			<br />

@@ -13,6 +13,11 @@ import org.hibernate.Session;
 
 import ca.etsmtl.log660.configuration.SessionFactoryHelper;
 import ca.etsmtl.log660.entity.Film;
+import ca.etsmtl.log660.entity.Genre;
+import ca.etsmtl.log660.entity.Langue;
+import ca.etsmtl.log660.entity.Pays;
+import ca.etsmtl.log660.entity.Personne;
+import ca.etsmtl.log660.entity.Scenariste;
 
 /**
  * Servlet implementation class TestServlet
@@ -42,23 +47,24 @@ public class FilmResearch extends HttpServlet {
 		String pays = request.getParameter("pays");
 		String langue = request.getParameter("langue");
 		String genre = request.getParameter("genre");
+		String scenariste = request.getParameter("scenariste");
 		String realisateur = request.getParameter("realisateur");
 		String acteur = request.getParameter("acteur");
-						
+		
 		Query query = session.createQuery(
-			//"FROM Film WHERE " +
-			//"titre LIKE CONCAT('%', :titre, '%') AND " +
-			//"annee BETWEEN :anneeMin AND :anneeMax"
-			"FROM Film"
-		);//.setParameter("titre", titre)
-		//.setParameter("anneeMin", anneeMin)
-		//.setParameter("anneeMax", anneeMax);
-		//.setParameter("pays", pays)
+			"FROM Film" +
+			" WHERE titre LIKE CONCAT('%', :titre, '%')" +
+			" AND annee BETWEEN :anneeMin AND :anneeMax" +
+			((pays != null) ? " AND :pays IN pays" : "")
+		).setParameter("titre", titre)
+		.setParameter("anneeMin", anneeMin)
+		.setParameter("anneeMax", anneeMax)
+		.setParameter("pays", pays);
 		//.setParameter("langue", langue)
 		//.setParameter("genre", genre)
 		//.setParameter("realisateur", realisateur)
 		//.setParameter("acteur", acteur);
-		
+
 		List<Film> films = query.list();
 		
 		for(Film f : films){
