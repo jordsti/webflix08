@@ -19,18 +19,18 @@
 		<form name="research" action="FilmResearch" method="get">
 			
 			<label>Titre : </label>
-			<input type="text" name="title" />
+			<input type="text" name="titre" />
 			<br />
 			
 			<label>Sortie entre : </label>
 			<select name="anneeMin">
-				<% for(int i = 1900; i < 2013; i++){ %>
-					<option value="annee<%= i %>"><%= i %></option>
+				<% for(int i = 1900; i <= 2013; i++){ %>
+					<option value="<%= i %>"><%= i %></option>
 				<% } %>
 			</select>
 			<select name="anneeMax">
-				<% for(int i = 1900; i < 2013; i++){ %>
-					<option value="annee<%= i %>"><%= i %></option>
+				<% for(int i = 2013; i >= 1900; i--){ %>
+					<option value="<%= i %>"><%= i %></option>
 				<% } %>
 			</select>
 			<br />
@@ -41,6 +41,10 @@
 			
 			<label>Langue : </label>
 			<input type="text" name="langue" />
+			<br />
+			
+			<label>Genre : </label>
+			<input type="text" name="genre" />
 			<br />
 			
 			<label>R&eacute;alisateur : </label>

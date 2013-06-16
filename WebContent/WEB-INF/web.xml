@@ -26,7 +26,7 @@
 	
 	<servlet-mapping>
 		<servlet-name>FilmResearch</servlet-name>
-		<url-pattern>/FileResearch</url-pattern>
+		<url-pattern>/FilmResearch</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>

@@ -1,6 +1,7 @@
 package ca.etsmtl.log660.entity;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+
 import ca.etsmtl.log660.entity.Role;
 
 
@@ -11,11 +12,11 @@ public class Film {
 	private String resume;
 	private String poster;
 	private int duree;
-	private ArrayList<Role> roles;
-	private ArrayList<Pays> pays;
-	private ArrayList<Genre> genres;
-	private ArrayList<Scenariste> scenaristes;
-	private ArrayList<Annonce> annonces;
+	private HashSet<Role> roles;
+	private HashSet<Pays> pays;
+	private HashSet<Genre> genres;
+	private HashSet<Scenariste> scenaristes;
+	private HashSet<Annonce> annonces;
 	private Langue langue;
 	private Personne realisateur;
 	
@@ -55,34 +56,34 @@ public class Film {
 	public void setDuree(int duree) {
 		this.duree = duree;
 	}
-	public ArrayList<Role> getRoles() {
+	public HashSet<Role> getRoles() {
 		return roles;
 	}
-	public void setRoles(ArrayList<Role> roles) {
+	public void setRoles(HashSet<Role> roles) {
 		this.roles = roles;
 	}
-	public ArrayList<Pays> getPays() {
+	public HashSet<Pays> getPays() {
 		return pays;
 	}
-	public void setPays(ArrayList<Pays> pays) {
+	public void setPays(HashSet<Pays> pays) {
 		this.pays = pays;
 	}
-	public ArrayList<Genre> getGenres() {
+	public HashSet<Genre> getGenres() {
 		return genres;
 	}
-	public void setGenres(ArrayList<Genre> genres) {
+	public void setGenres(HashSet<Genre> genres) {
 		this.genres = genres;
 	}
-	public ArrayList<Scenariste> getScenaristes() {
+	public HashSet<Scenariste> getScenaristes() {
 		return scenaristes;
 	}
-	public void setScenaristes(ArrayList<Scenariste> scenaristes) {
+	public void setScenaristes(HashSet<Scenariste> scenaristes) {
 		this.scenaristes = scenaristes;
 	}
-	public ArrayList<Annonce> getAnnonces() {
+	public HashSet<Annonce> getAnnonces() {
 		return annonces;
 	}
-	public void setAnnonces(ArrayList<Annonce> annonces) {
+	public void setAnnonces(HashSet<Annonce> annonces) {
 		this.annonces = annonces;
 	}
 	public Langue getLangue() {
