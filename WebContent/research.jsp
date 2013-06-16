@@ -3,13 +3,17 @@
 		response.sendRedirect("/lab02/index.jsp");
 	}
 %>
+<%@ page import="ca.etsmtl.log660.entity.Film" %>
+<%@ page import="java.util.List" %>
+<jsp:include page="FilmResearch" />
+
 
 <%@ include file="/header.jsp" %>
 <div class="container">
 	<h2>Bienvenue <%= request.getSession().getAttribute("nom") %> !</h2>
 	<h3>Recherche de film</h3>
 	<div>
-		<form name="research" action="FilmResearch" method="get">
+		<form name="research" action="research.jsp" method="get">
 			
 			<label>Titre : </label>
 			<input type="text" name="titre" />
@@ -55,12 +59,20 @@
 			<input type="submit" name="search" value="Rechercher">
 		</form>
 	</div>
-	
-	<% if(request.getParameter("film1") != null){ %>
-		<div>
-			Result
+	<div class="container">
+	<% for(Film f : (List<Film>)request.getAttribute("films"))
+	{
+	%>
+		<div class="row-fluid">
+			<div class="span8">
+			<a href="film.jsp?filmid=<%= f.getId() %>"><%= f.getTitre() %> - <%= f.getAnnee() %></a>
+			</div>
+			<div class="span3">
+			<a href="#">Louer</a>
+			</div>
 		</div>
 	<% } %>
+	</div>
 	
 </div>
 <%@ include file="/footer.jsp" %>

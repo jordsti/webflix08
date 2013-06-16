@@ -30,11 +30,11 @@ public class ViewFilm extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*if(request.getSession().getAttribute("id") == null)
+		if(request.getSession().getAttribute("id") == null)
 		{
 			//not logged, need to redirect to index.jsp
 			return;
-		}*/
+		}
 		
 		String filmId = request.getParameter("filmid");
 		

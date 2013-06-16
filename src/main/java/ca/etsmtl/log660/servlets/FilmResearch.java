@@ -43,36 +43,87 @@ public class FilmResearch extends HttpServlet {
 		session.beginTransaction();
 		
 		String titre = request.getParameter("titre");
-		int anneeMin = Integer.parseInt(request.getParameter("anneeMin"));
-		int anneeMax = Integer.parseInt(request.getParameter("anneeMax"));
-		String pays = request.getParameter("pays");
-		String langue = request.getParameter("langue");
-		String genre = request.getParameter("genre");
-		String scenariste = request.getParameter("scenariste");
-		String realisateur = request.getParameter("realisateur");
-		String acteur = request.getParameter("acteur");
+		if(titre != null && titre.length() == 0)
+		{
+			titre = null;
+		}
 		
+		String strAnnee = request.getParameter("anneeMin");
+		int anneeMin = 1900;
+		int anneeMax = 2100;
+		if(strAnnee != null)
+		{
+			anneeMin = Integer.parseInt(strAnnee);
+		}
+		
+		strAnnee = request.getParameter("anneeMax");
+		if(strAnnee != null)
+		{
+			anneeMax = Integer.parseInt(strAnnee);
+		}
+
+		String pays = request.getParameter("pays");
+		
+		if(pays != null && pays.length() == 0)
+		{
+			pays = null;
+		}
+		
+		String langue = request.getParameter("langue");
+		if(langue != null && langue.length() == 0)
+		{
+			langue = null;
+		}
+		String genre = request.getParameter("genre");
+		if(genre != null && genre.length() == 0)
+		{
+			genre = null;
+		}
+		String scenariste = request.getParameter("scenariste");
+		if(scenariste != null && scenariste.length() == 0)
+		{
+			scenariste = null;
+		}
+		String realisateur = request.getParameter("realisateur");
+		if(realisateur != null && realisateur.length() == 0)
+		{
+			realisateur = null;
+		}
+		String acteur = request.getParameter("acteur");
+		if(acteur != null && acteur.length() == 0)
+		{
+			acteur = null;
+		}
+		//y reste juste le critère du scénariste à ajouter
 		Query query = session.createQuery(
-			"FROM Film" +
-			" WHERE titre LIKE CONCAT('%', :titre, '%')" +
-			" AND annee BETWEEN :anneeMin AND :anneeMax" +
-			((pays != null) ? " AND :pays IN pays" : "")
+			"FROM Film f" +
+			" WHERE ( f.titre LIKE CONCAT('%', :titre, '%')  OR :titre IS NULL) AND" +
+			" ( f.annee BETWEEN :anneeMin AND :anneeMax ) AND" +
+			" ( :langue IS NULL OR :langue = f.langue.langue) AND"+
+			" ( :pays IS NULL OR :pays IN( SELECT p.nomPays FROM f.pays p )) AND"+
+			" ( :acteur IS NULL OR :acteur IN( SELECT r.personne.nom FROM f.roles r )) AND"+
+			" ( :realisateur IS NULL OR :realisateur = f.realisateur.nom ) AND" +
+			" ( :genre IS NULL OR :genre IN( SELECT g.genre FROM f.genres g ))"
 		).setParameter("titre", titre)
 		.setParameter("anneeMin", anneeMin)
 		.setParameter("anneeMax", anneeMax)
-		.setParameter("pays", pays);
-		//.setParameter("langue", langue)
-		//.setParameter("genre", genre)
-		//.setParameter("realisateur", realisateur)
-		//.setParameter("acteur", acteur);
+		.setParameter("pays", pays)
+		.setParameter("langue", langue)
+		.setParameter("genre", genre)
+		.setParameter("realisateur", realisateur)
+		.setParameter("acteur", acteur);
 
+		query.setMaxResults(50);
+		
 		List<Film> films = query.list();
 		
-		for(Film f : films){
+		request.setAttribute("films", films);
+		//sending films as a attribute
+		/*for(Film f : films){
 			response.getWriter().println(f.getTitre());
-		}
+		}*/
 		
-		session.close();
+		//session.close();
 	}
 
 	/**

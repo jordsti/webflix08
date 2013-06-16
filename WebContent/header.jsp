@@ -17,10 +17,10 @@
 				<% if(request.getSession().getAttribute("id") == null)
 				{
 				%>
-					<li><a href="/index.jsp">Connexion</a></li>
+					<li><a href="index.jsp">Connexion</a></li>
 				<% } else { %>
-					<li><a href="/research.jsp">Consulter les films</a></li>
-					<li><a href="/index.jsp">Se déconnecter</a></li>
+					<li><a href="research.jsp">Consulter les films</a></li>
+					<li><a href="index.jsp">Se déconnecter</a></li>
 				<% } %>
 				</ul>
 			</div>
