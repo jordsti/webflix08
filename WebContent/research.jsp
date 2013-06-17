@@ -68,7 +68,7 @@
 			<a href="film.jsp?filmid=<%= f.getId() %>"><%= f.getTitre() %> - <%= f.getAnnee() %></a>
 			</div>
 			<div class="span3">
-			<a href="#">Louer</a>
+			<a href="location.jsp?filmid=<%= f.getId() %>">Louer</a>
 			</div>
 		</div>
 	<% } %>

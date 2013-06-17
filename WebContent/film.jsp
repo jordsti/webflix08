@@ -3,6 +3,7 @@
 <%@ page import="ca.etsmtl.log660.entity.Genre" %>
 <%@ page import="ca.etsmtl.log660.entity.Pays" %>
 <%@ page import="ca.etsmtl.log660.entity.Annonce" %>
+<%@ page import="ca.etsmtl.log660.entity.Scenariste" %>
 <jsp:include page="ViewFilm" />
 
 <%@ include file="/header.jsp" %>
@@ -13,7 +14,7 @@
 <h3><%= film.getTitre() %></h3>
 <p>
 	<div class="span4">
-		<a href="rent.jsp?filmid=<%= film.getId() %>">Louer</a>
+		<a href="location.jsp?filmid=<%= film.getId() %>">Louer</a>
 	</div>
 	<br />
 	<em><%= film.getAnnee() %></em>
@@ -40,6 +41,14 @@
 	{
 	%>
 	<li><%= r.getPersonne().getNom() %> dans le rôle de <%= r.getNomRole()%></li>
+	<% } %>
+	</ul>
+	<br /> Scénariste(s) :
+	<ul>
+	<% for(Scenariste s : film.getScenaristes())
+	{
+	%>
+		<li><%= s.getNom() %></li>
 	<% } %>
 	</ul>
 	<br /> Annonce :

@@ -50,7 +50,7 @@
 			<key column="NO_FILM_FK" />
       		<many-to-many column="NO_GENRE_FK" class="Genre" />
 		</set>
-		<set name="scenaristes">
+		<set name="scenaristes" table="SCENARISTE_FILMS">
 			<key column="NO_FILM_FK" />
       		<many-to-many column="NO_SCENARISTE_FK" class="Scenariste" />
 		</set>

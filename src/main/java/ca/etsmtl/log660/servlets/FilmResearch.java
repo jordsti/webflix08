@@ -103,7 +103,8 @@ public class FilmResearch extends HttpServlet {
 			" ( :pays IS NULL OR :pays IN( SELECT p.nomPays FROM f.pays p )) AND"+
 			" ( :acteur IS NULL OR :acteur IN( SELECT r.personne.nom FROM f.roles r )) AND"+
 			" ( :realisateur IS NULL OR :realisateur = f.realisateur.nom ) AND" +
-			" ( :genre IS NULL OR :genre IN( SELECT g.genre FROM f.genres g ))"
+			" ( :genre IS NULL OR :genre IN( SELECT g.genre FROM f.genres g )) AND" +
+			" ( :scenariste IS NULL OR :scenariste IN( SELECT s.nom FROM f.scenaristes s )) "
 		).setParameter("titre", titre)
 		.setParameter("anneeMin", anneeMin)
 		.setParameter("anneeMax", anneeMax)
@@ -111,7 +112,8 @@ public class FilmResearch extends HttpServlet {
 		.setParameter("langue", langue)
 		.setParameter("genre", genre)
 		.setParameter("realisateur", realisateur)
-		.setParameter("acteur", acteur);
+		.setParameter("acteur", acteur)
+		.setParameter("scenariste", scenariste);
 
 		query.setMaxResults(50);
 		
