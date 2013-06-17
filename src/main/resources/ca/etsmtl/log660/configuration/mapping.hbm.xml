@@ -115,7 +115,7 @@
 		<joined-subclass name="Client" extends="Intervenant" table="CLIENTS">				
 			<key column="NO_INTERVENANT_FK" />
 				
-			<many-to-one name="forfait" column="NO_FORFAIT_FK" />
+			<many-to-one name="forfait" column="NO_FORFAIT_FK" insert="false" update="false"/>
 			<many-to-one name="infoCredit" column="NO_INFO_CREDIT_FK" />
 		</joined-subclass>
 		<joined-subclass name="Employe" extends="Intervenant" table="EMPLOYES">				

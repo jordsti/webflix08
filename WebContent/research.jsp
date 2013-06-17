@@ -7,7 +7,6 @@
 <%@ page import="java.util.List" %>
 <jsp:include page="FilmResearch" />
 
-
 <%@ include file="/header.jsp" %>
 <div class="container">
 	<h2>Bienvenue <%= request.getSession().getAttribute("nom") %> !</h2>
