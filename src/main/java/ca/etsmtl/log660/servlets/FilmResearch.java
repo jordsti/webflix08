@@ -1,6 +1,7 @@
 package ca.etsmtl.log660.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,8 +13,10 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import ca.etsmtl.log660.configuration.SessionFactoryHelper;
+import ca.etsmtl.log660.entity.Client;
 import ca.etsmtl.log660.entity.Film;
 import ca.etsmtl.log660.entity.Genre;
+import ca.etsmtl.log660.entity.Intervenant;
 import ca.etsmtl.log660.entity.Langue;
 import ca.etsmtl.log660.entity.Pays;
 import ca.etsmtl.log660.entity.Personne;
@@ -41,6 +44,7 @@ public class FilmResearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Session session = SessionFactoryHelper.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
+		
 		
 		String titre = request.getParameter("titre");
 		if(titre != null && titre.length() == 0)

@@ -3,9 +3,9 @@ package ca.etsmtl.log660.entity;
 public class Forfait {
 	private int id;
 	private String nom;
-	private float cout;
-	private int locationMax;
-	private int duree;
+	private float cout = 0;
+	private int locationMax = 0;
+	private int duree = 0;
 	
 	
 	public int getId() {
