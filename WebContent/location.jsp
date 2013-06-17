@@ -4,11 +4,9 @@
 <%@ page import="ca.etsmtl.log660.entity.Pays" %> 
 <%@ page import="ca.etsmtl.log660.entity.Annonce" %> 
 <%@ page import="ca.etsmtl.log660.entity.Forfait" %> 
-<jsp:include page="/ViewFilm" /> 
-<% Film film = (Film)request.getAttribute("film"); 
-     Forfait forfait = (Forfait)request.getAttribute("forfait"); 
- 
-     //Forfait forfait = (Forfait)request.getAttribute("forfait");%> 
+ <jsp:include page="Location" />
+<% Film film = (Film)request.getAttribute("film"); %>
+<% Forfait forfait = (Forfait)request.getAttribute("forfait"); %> 
  
 <%@ include file="/header.jsp" %> 
  
@@ -40,15 +38,17 @@
      <% for(Role r : film.getRoles())  
      { 
      %> 
-     <li><%= r.getPersonne().getNom() %> dans le rôle de <%= r.getNomRole()%></li> 
+     <li><%= r.getPersonne().getNom() %> dans le rôle de <%= r.getNomRole() %></li> 
      <% } %> 
      </ul> 
       
       
-     <br /><br /><br /> Location disponible dans votre forfait : <%= forfait.getLocationMax() %>  
+     <br /><br /><br /> Location disponible dans votre forfait :  
       
-      <% if(forfait.getLocationMax() > 0){ %>
-      	<a href="/lab02/ConfirmLocation?<%= film.getId() %>">Confirmer la location</a>
+      <% if((Boolean)request.getAttribute("success")){ %>
+      	<h4>Le film a été loué avec succès !</h4>
+      <% } else { %>
+      	<h4>Ce film n'est plus disponible ou aucune copie est disponible</h4>
       <% } %>
            
      </div> 

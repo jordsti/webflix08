@@ -19,6 +19,7 @@ public class Film {
 	private Set<Annonce> annonces;
 	private Langue langue;
 	private Personne realisateur;
+
 	
 	public int getId() {
 		return id;
